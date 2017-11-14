@@ -25,9 +25,9 @@
       <h1>统一建模语言理论测试</h1>
      </div>
      <div class="row"> 
-    <div class="col-md-4">考试科目：统一建模语言</div>
-    <div class="col-md-4">考试时间：100分钟</div>
-    <div class="col-md-4">得分：100</div>
+    <div class="col-md-4 col-xs-6">考试科目：统一建模语言</div>
+    <div class="col-md-4 col-xs-6">考试时间：100分钟</div>
+    <div class="col-md-4 col-xs-6">得分：100</div>
 </div>
 <div class="row"> 
   <div class="col-md-4">
@@ -68,42 +68,43 @@
       <div class="row">
       <h2>一、填空题（每空5分，共20分）</h2>
       
-        <div class="col-md-6">
+        <div class="col-md-6, col-xs-4">
         <form>
         <ol>
           <li>UML的中文全称是:
-          <input type="text" class="form-control" id="part1_1" placeholder="统一建模语言">
+          <input type="text" class="form-control " id="part1_1" >
           </li>
   
           <li>对象最突出的特征是：
-            <input type="text" class="form-control" id="part1_2" placeholder="封装性">
-            <input type="text" class="form-control" id="part1_2" placeholder="继承性">
-            <input type="text" class="form-control" id="part1_2" placeholder="多态性">
+            <input type="text" class="form-control" id="part1_21" >
+            <input type="text" class="form-control" id="part1_22" >
+            <input type="text" class="form-control" id="part1_23" >
           </li>
         </ol>
         </form>
     </div>
     </div>
-    <div class="row">
+    <div class="row" >
       <h2>二、选择题(每题10分，共20分)</h2>
      
      <div class="row">
       <ol>
         <li>UML与软件工程的关系是:</li><br>
-         <form action="select">
-         <p class="margin"><input type="radio" name="answer">(A)UML就是软件工程</p>
-         <p class="margin"><input type="radio" name="answer">(B)UML参与到软件工程中软件开发过程的几个阶段</p>
-         <p class="margin"><input type="radio" name="answer">(C)UML与软件工程无关</p>
-         <p class="margin"><input type="radio" name="answer">(D)UML是软件工程的一部分</p>
+
+         <form action="select" id="part2_1" name="answer">
+         <p class="margin"><input type="radio" name="answerA" value="0">(A)UML就是软件工程</p>
+         <p class="margin"><input type="radio" name="answerB" value="10">(B)UML参与到软件工程中软件开发过程的几个阶段</p>
+         <p class="margin"><input type="radio" name="answerC" value="0">(C)UML与软件工程无关</p>
+         <p class="margin"><input type="radio" name="answerD" value="0">(D)UML是软件工程的一部分</p>
     </form>
         
   
         <li>Java语言支持：</li><br>
-        <form action="select">
-        <p class="margin"><input type="radio" name="answer">(A)单继承</p>
-        <p class="margin"><input type="radio" name="answer">(B)多继承</p>
-        <p class="margin"><input type="radio" name="answer">(C)单继承和多继承都支持</p>
-        <p class="margin"><input type="radio" name="answer">(D)单继承和多继承都不支持</p>
+        <form action="select" id="part2_2" name="answer">
+        <p class="margin"><input type="radio" name="answerA" value="10">(A)单继承</p>
+        <p class="margin"><input type="radio" name="answerB" value="0">(B)多继承</p>
+        <p class="margin"><input type="radio" name="answerC" value="0">(C)单继承和多继承都支持</p>
+        <p class="margin"><input type="radio" name="answerD" value="0">(D)单继承和多继承都不支持</p>
         </form>
         
       </ol>
@@ -116,20 +117,20 @@
        
   <ol>
   <li>用例的粒度分为以下哪三种:</li><br>
-    <form action="select">
-        <p class="margin"><input type="checkbox" name="answer">(A)概述级</p>
-        <p class="margin"><input type="checkbox" name="answer">(B)需求级</p>
-        <p class="margin"><input type="checkbox" name="answer">(C)用户目标级</p>
-        <p class="margin"><input type="checkbox" name="answer">(D)子功能级</p>
+    <form action="select" name="answer" id="part3_1">
+        <p class="margin"><input type="checkbox" name="answerA" value="1">(A)概述级</p>
+        <p class="margin"><input type="checkbox" name="answerB" value="1">(B)需求级</p>
+        <p class="margin"><input type="checkbox" name="answerC" value="0">(C)用户目标级</p>
+        <p class="margin"><input type="checkbox" name="answerD" value="1">(D)子功能级</p>
     </form>
   
   
   <li>类图由以下哪三部分组成：</li><br>
-        <form action="select">
-          <p class="margin"><input type="checkbox" name="answer">(A)名称(Name)</p>
-          <p class="margin"><input type="checkbox" name="answer">(B)属性(Attribute)</p>
-          <p class="margin"><input type="checkbox" name="answer">(C)操作(Operation)</p>
-          <p class="margin"><input type="checkbox" name="answer">(D)方法(Function)</p>
+        <form action="select" name="answer" id="part3_2">
+          <p class="margin"><input type="checkbox" name="answerA" value="1">(A)名称(Name)</p>
+          <p class="margin"><input type="checkbox" name="answerB" value="1">(B)属性(Attribute)</p>
+          <p class="margin"><input type="checkbox" name="answerC" value="1">(C)操作(Operation)</p>
+          <p class="margin"><input type="checkbox" name="answerD" value="0">(D)方法(Function)</p>
         </form> 
   </ol>
   </div>
@@ -138,26 +139,28 @@
       <h2>四、判断题（每题10分，共20分）</h2>
           
   <div class="col-md-6">
-  <form>
+  
   <ol>
   <li>用例图只是用于和客户交流和沟通的，用于确定需求。</li>
-  <div class="radio">
+  <div class="radio" id="part4_1">
+    <form>
    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" 
-         value="option1" checked>√</input></label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="0"
+         value="option1" >√</input></label>
    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" 
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="10"
          value="option2">×</input></label>
     
-    
+    </form>
   
   <li>在状态图中，终止状态在一个状态图中允许由任意多个。</li>
-    <div class="radio">
+    <div class="radio" id="part4_2">
+      <form>
    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" 
-         value="option1" checked>√</input></label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="10"
+         value="option1" >√</input></label>
    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" 
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="0"
          value="option2">×</input></label>
     
   </ol>
@@ -174,7 +177,7 @@
   <ol>
   <li>简述什么是模型以及模型的表现形式？<br>
 
-    <textarea class="form-control" name="answer" id="" cols="70" rows="10"></textarea>
+    <textarea class="form-control" name="answer" id="part5" cols="70" rows="10"></textarea>
 
   </li>
   </ol>
@@ -197,7 +200,7 @@
         <h4 class="modal-title" id="myModalLabel">提醒</h4>
       </div>
       <div class="modal-body">
-       确认修改？
+       尚未完成
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
