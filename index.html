@@ -209,40 +209,36 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="Score()">Save changes and submit</button>
         <script>
-        var answer1=["统一建模语言","封装性","继承性","多态性","模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"];
         var Score=function ()
         {
-          let answer_score=0;
+          var answer1=["统一建模语言","封装性","继承性","多态性","模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"];
+          var answer_score=0;
           let Blank1=document.getElementById("part1");
           if( Blank1.value=== answer1[0])
-          {
             answer_score+=5;
-          }
           let Blank2=document.getElementsByName("part2");
-          for (let answer in answer1)
+          for (let index of Blank2)
           {
-            for(let item in Blank2)
-            {
-              if(item === answer && item.length===3)
+              if(Blank2[index] === answer1[index+1])
               {
                 answer_score+=5;
               }
-            }
+            
           }
           let Choice1=document.getElementsByName("answer5");
           for (let choice in Choice1) 
           {
             if (choice.checked) 
             {
-              answer_score += choice.value;
+              answer_score += parseInt(choice.value);
             }
           }
           let Choice2=document.getElementsByName("answer6");
-          for (let choice in Choice2)
+          for (let index in Choice2)
           {
-            if (choice.checked) 
+            if (Choice2[index].checked) 
             {
-              answer_score += choice.value;
+              answer_score += parseInt(Choice2[index].value);
             }
           }
           let multiple1=document.getElementsByName("answer7");
@@ -251,32 +247,28 @@
           {
             if(choice.checked)
             {
-              count_score+=choice.value;
+              count_score+=parseInt(choice.value);
             }
           }
           if (count_score === 3)
-          {
             answer_score += 10;
-          }
           let multiple2=document.getElementsByName("answer8");
           count_score=0;
           for(let choice of multiple2)
           {
             if(choice.checked)
             {
-              count_score+=choice.value;
+              count_score+=parseInt(choice.value);
             }
           }
           if (count_score === 3)
-          {
             answer_score += 10;
-          }
           let judgment1=document.getElementsByName("answer9");
           for (let choice in judgment1)
           {
             if (choice.checked) 
             {
-              answer_score += choice.value;
+              answer_score += parseInt(choice.value);
             }
           }
           let judgment2=document.getElementsByName("answer10");
@@ -284,7 +276,7 @@
           {
             if (choice.checked) 
             {
-              answer_score += choice.value;
+              answer_score += parseInt(choice.value);
             }
           }
           let short_answer=document.getElementById("part11");
