@@ -31,7 +31,7 @@
     <div class="col-md-4 col-xs-6">考试时间：100分钟</div>
     <div class="col-md-4 col-xs-6">得分：100</div>
 </div>
-<div class="row"> 
+<div class="row"  name="information"> 
   <div class="col-md-4">
     <div class="row">
         <div class="col-lg-6">
@@ -78,9 +78,9 @@
           </li>
   
           <li>对象最突出的特征是：
-            <input type="text" class="form-control" id="part2" >
-            <input type="text" class="form-control" id="part3" >
-            <input type="text" class="form-control" id="part4" >
+            <input type="text" class="form-control" name="part2" >
+            <input type="text" class="form-control" name="part2" >
+            <input type="text" class="form-control" name="part2" >
           </li>
         </ol>
         </form>
@@ -209,83 +209,91 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="Score()">Save changes and submit</button>
         <script>
-     var answer1=["统一建模语言","封装性","继承性","多态性","模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"];
-     function Blankscores1(id)
-     {
-      let get_answer=document.getElementById(id);
-      let answer_score=0;
-        if(get_answer.value === answer1[0])
-          {
-            answer_score+=5;
-            break;
-          }
-      }
-      return answer_score;
-     }
-     function Blankscores2(id)
-     {
-      let get_answer=document.getElementById(id);
-      let answer_score=0;
-      for (let answer in answer1)
-      {
-        if(get_answer.value === answer && get_answer.length===3)
-          {
-            answer_score+=5;
-            break;
-          }
-      }
-      return answer_score;
-     }
-     function Choice_score1(name)
-     {
-       let answer_score=0
-       let choice_answer = document.getElementsByName(name);
-       for (let choice of choice_answer) 
-       {
-        if (choice.checked) 
-          {
-            answer_score += choice.value;
-          }
-        }
-        return answer_score;
-     }
-     function multip_choice(name)
-     {
-      let count_score=0;
-      let choice_answer=document.getElementsByName(name);
-      for(let choice of choice_answer)
-      {
-        if(choice.checked)
+        var answer1=["统一建模语言","封装性","继承性","多态性","模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"];
+        var Score=function ()
         {
-          count_score+=choice.value;
-        }
-      }
-      if (count_score === 3)
-      {
-        return 10;
-      }
-      return 0;
-     }
-     function Short_answer(id)
-     {
-      let score=0;
-      let short_answer=getElementById(id);
-      if(answer1[4]===short_answer.value)
+          let answer_score=0;
+          let Blank1=document.getElementById("part1");
+          if( Blank1.value=== answer1[0])
           {
-            score+=20;
+            answer_score+=5;
           }
-
-      }
-      return score;
-
-     }
-     var Score=function ()
-     {
-      let 
-      var the_score=Blankscores1("part1")+Blankscores2("part2")+Blankscores2("part3")+Blankscores2("part4")+Choice_score("answer5")+Choice_score("answer6")+ multip_choice("answer7")+ multip_choice("answer8")+Choice_score("answer9")+Choice_score("answer10")+Short_answer("part11");
-      let information="Class："+document.getElementById("classname").value+"<br>"+"ID："+document.getElementById("studentid").value
-                       +"<br>"+"Name："+document.getElementById("studentname").value;
-                  document.write(information+"<br>"+"Score："+the_score+"分");
+          let Blank2=document.getElementsByName("part2");
+          for (let answer in answer1)
+          {
+            for(let item in Blank2)
+            {
+              if(item === answer && item.length===3)
+              {
+                answer_score+=5;
+              }
+            }
+          }
+          let Choice1=document.getElementsByName("answer5");
+          for (let choice in Choice1) 
+          {
+            if (choice.checked) 
+            {
+              answer_score += choice.value;
+            }
+          }
+          let Choice2=document.getElementsByName("answer6");
+          for (let choice in Choice2)
+          {
+            if (choice.checked) 
+            {
+              answer_score += choice.value;
+            }
+          }
+          let multiple1=document.getElementsByName("answer7");
+          let count_score=0;
+          for(let choice of multiple1)
+          {
+            if(choice.checked)
+            {
+              count_score+=choice.value;
+            }
+          }
+          if (count_score === 3)
+          {
+            answer_score += 10;
+          }
+          let multiple2=document.getElementsByName("answer8");
+          count_score=0;
+          for(let choice of multiple2)
+          {
+            if(choice.checked)
+            {
+              count_score+=choice.value;
+            }
+          }
+          if (count_score === 3)
+          {
+            answer_score += 10;
+          }
+          let judgment1=document.getElementsByName("answer9");
+          for (let choice in judgment1)
+          {
+            if (choice.checked) 
+            {
+              answer_score += choice.value;
+            }
+          }
+          let judgment2=document.getElementsByName("answer10");
+          for (let choice in judgment2)
+          {
+            if (choice.checked) 
+            {
+              answer_score += choice.value;
+            }
+          }
+          let short_answer=document.getElementById("part11");
+          if(answer1[4]===short_answer.value)
+          {
+            answer_score+=20;
+          }
+          let information="Class："+document.getElementById("classname").value+"<br>"+"ID："+document.getElementById("studentid").value+"<br>"+"Name："+document.getElementById("studentname").value;
+          document.write(information+"<br>"+"Score："+answer_score);
                 }
   </script>
       </div>
