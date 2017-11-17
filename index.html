@@ -209,10 +209,10 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="Score()">Save changes and submit</button>
         <script>
-        var Score=function ()
+        let Score=function ()
         {
           var answer1=["统一建模语言","封装性","继承性","多态性","模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"];
-          var answer_score=0;
+          let answer_score=0;
           let Blank1=document.getElementById("part1");
           if( Blank1.value=== answer1[0])
             answer_score+=5;
@@ -222,8 +222,7 @@
               if(Blank2[index] === answer1[index+1])
               {
                 answer_score+=5;
-              }
-            
+              }  
           }
           let Choice1=document.getElementsByName("answer5");
           for (let choice in Choice1) 
