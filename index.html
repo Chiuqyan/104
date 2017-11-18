@@ -219,9 +219,9 @@
             answer_score+=5;
           }
           let Blank2=document.getElementsByName("part2");
-          for (let answer in answer1)
+          for (let answer of answer1)
           {
-            for(let item in Blank2)
+            for(let item of Blank2)
             {
               if(item.value === answer)
               {
@@ -230,7 +230,7 @@
           }
         }
           let Choice1=document.getElementsByName("answer5");
-          for (let choice in Choice1)
+          for (let choice of Choice1)
           {
             if (choice.checked) 
             {
@@ -238,7 +238,7 @@
             }
           }
           let Choice2=document.getElementsByName("answer6");
-          for (let choice in Choice2)
+          for (let choice of Choice2)
           {
             if (choice.checked) 
             {
@@ -272,7 +272,7 @@
             answer_score += 10;
           }
           let judgment1=document.getElementsByName("answer9");
-          for (let choice in judgment1)
+          for (let choice of judgment1)
           {
             if (choice.checked) 
             {
@@ -280,7 +280,7 @@
             }
           }
           let judgment2=document.getElementsByName("answer10");
-          for (let choice in judgment2)
+          for (let choice of judgment2)
           {
             if (choice.checked) 
             {
